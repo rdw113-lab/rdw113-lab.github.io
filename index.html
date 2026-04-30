@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER_NAME // Digital Systems Architect</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --grid: #00f2ff15;
+            --neon-cyan: #00f2ff;
+            --neon-orange: #ff8c00;
+            --text-main: #e0e0e0;
+            --text-dim: #94a3b8;
+            --font-mono: 'Courier New', Courier, monospace;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- THE GRID BACKGROUND --- */
+        .grid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+            background-size: 50px 50px;
+            perspective: 1000px;
+            transform: perspective(500px) rotateX(60deg) translateY(-100px);
+            transform-origin: top;
+            z-index: -2;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+        }
+
+        /* --- SCANLINE EFFECT --- */
+        body::before {
+            content: " ";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--neon-cyan);
+            opacity: 0.3;
+            box-shadow: 0 0 15px var(--neon-cyan);
+            z-index: 100;
+            animation: scan 4s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* --- PROFILE IMAGE STYLING --- */
+        .profile-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin-bottom: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+            filter: grayscale(30%) contrast(110%);
+        }
+
+        /* Biometric Ring Decor */
+        .profile-container::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 1px dashed var(--neon-cyan);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        header {
+            margin-bottom: 6rem;
+            animation: fadeIn 1.5s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        h1 {
+            font-family: var(--font-mono);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-family: var(--font-mono);
+            color: var(--neon-orange);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- CARDS & SECTIONS --- */
+        .card {
+            background: rgba(0, 242, 255, 0.03);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            padding: 2rem;
+            position: relative;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card::before, .card::after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--neon-cyan);
+        }
+        .card::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+        .card::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+
+        section {
+            margin-bottom: 5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: reveal 1s forwards;
+        }
+
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.6s; }
+
+        h2 {
+            font-family: var(--font-mono);
+            color: var(--neon-cyan);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            height: 1px;
+            background: var(--neon-cyan);
+            flex-grow: 1;
+            margin-left: 20px;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--neon-orange);
+            color: var(--neon-orange);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--neon-orange);
+            color: black;
+            box-shadow: 0 0 20px var(--neon-orange);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; filter: blur(10px); }
+            to { opacity: 1; filter: blur(0); }
+        }
+
+        @keyframes reveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            font-family: var(--font-mono);
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--grid);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-background"></div>
+
+    <div class="container">
+        <header>
+            <div class="profile-container">
+                <img src="Assets/ProfilePic.jpeg" alt="User Profile" class="profile-pic">
+            </div>
+            
+            <p class="tagline">// IDENTITY VERIFIED</p>
+            <h1>USER_NAME</h1>
+            <p style="font-size: 1.2rem; max-width: 600px;">
+                Digital Systems Architect specializing in high-performance human-centric interfaces. 
+                Optimizing the intersection of logic and creativity within the grid.
+            </p>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>01. CORE_MODULES</h2>
+                <div class="card">
+                    <p>
+                        I navigate complex data landscapes to build scalable digital solutions. With a focus on 
+                        clean code and kinetic design, I ensure every system I build is a celebration of 
+                        technological efficiency and user experience.
+                    </p>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>02. SYSTEM_HISTORY</h2>
+                <div class="card">
+                    <h3 class="tagline">Lead Developer @ Cyberdyne Systems</h3>
+                    <p style="margin-top: 1rem;">Managed the deployment of neural-network interfaces, resulting in a 40% increase in processing throughput.</p>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>03. ACTIVE_PROJECTS</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="card">
+                        <h3>Project Alpha-Stream</h3>
+                        <p>Real-time data visualization engine.</p>
+                        <a href="#" class="btn">View Source</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 USER_NAME. // SYSTEM OPERATIONAL</p>
+        </footer>
+    </div>
+
+</body>
+</html>
