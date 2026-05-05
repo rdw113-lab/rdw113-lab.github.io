@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPA ISC Exam Prep</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="hud">
+        <div class="hud-item">
+            <span class="hud-label">Progress</span>
+            <span id="progress-text">1 / 10</span>
+        </div>
+        <div class="hud-item streak-container">
+            <span class="hud-label">🔥 Streak</span>
+            <span id="streak-counter">0</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">🏆 Best</span>
+            <span id="highest-streak-display">0</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="quiz-section">
+            <div id="question-card">
+                <div id="question-meta">
+                    <span id="domain-badge" class="badge">Domain</span>
+                </div>
+                
+                <h2 id="question-text">Loading question...</h2>
+                
+                <div id="options-container"></div>
+            </div>
+
+            <div id="explanation-container" class="hidden">
+                <h3 id="result-feedback"></h3>
+                <p id="explanation-text"></p>
+                <button id="next-btn" class="btn primary-btn">Next Question</button>
+            </div>
+        </section>
+
+        <section id="results-section" class="hidden">
+            <h2>Quiz Complete!</h2>
+            <p>Your Final Score: <span id="final-score">0</span>%</p>
+            <button id="restart-btn" class="btn primary-btn">Restart Quiz</button>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
