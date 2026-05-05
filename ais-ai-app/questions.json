@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ISC-001",
+    "questionType": "MCQ",
+    "domain": "Security, Confidentiality and Privacy",
+    "topic": "Access Controls",
+    "skillLevel": "Application",
+    "question": "Which of the following access control models is best suited for an organization characterized by high employee turnover and strict departmental separation?",
+    "options": [
+      "Discretionary Access Control (DAC)",
+      "Mandatory Access Control (MAC)",
+      "Role-Based Access Control (RBAC)",
+      "Attribute-Based Access Control (ABAC)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Role-Based Access Control (RBAC) assigns permissions to specific roles rather than individuals. In high-turnover environments, this reduces administrative overhead because when a new employee is hired, they are simply assigned the existing role with all necessary permissions already configured."
+  },
+  {
+    "id": "ISC-002",
+    "questionType": "MCQ",
+    "domain": "Considerations for SOC Engagements",
+    "topic": "SOC Reports",
+    "skillLevel": "Remembering and Understanding",
+    "question": "Which type of SOC report is specifically designed to meet the needs of users who need assurance about the controls at a service organization relevant to user entities' internal control over financial reporting (ICFR)?",
+    "options": [
+      "SOC 1",
+      "SOC 2",
+      "SOC 3",
+      "SOC for Cybersecurity"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "A SOC 1 report focuses solely on controls at a service organization that are likely to be relevant to an audit of a user entity's financial statements. SOC 2 and SOC 3 focus on the Trust Services Criteria (security, availability, etc.)."
+  },
+  {
+    "id": "ISC-003",
+    "questionType": "MCQ",
+    "domain": "Information Systems and Data Management",
+    "topic": "System Development Life Cycle (SDLC)",
+    "skillLevel": "Application",
+    "question": "During which phase of the System Development Life Cycle (SDLC) should security controls be initially considered and planned?",
+    "options": [
+      "System Design",
+      "Implementation and Coding",
+      "Requirements Definition",
+      "Testing and Integration"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Security should be integrated as early as possible in the SDLC. Incorporating security during the Requirements Definition phase ensures that security controls are built into the system's architecture from the ground up, rather than bolted on later."
+  },
+  {
+    "id": "ISC-004",
+    "questionType": "MCQ",
+    "domain": "Security, Confidentiality and Privacy",
+    "topic": "Cryptography",
+    "skillLevel": "Application",
+    "question": "When an employee sends a digitally signed email to a client, which key is used to create the digital signature?",
+    "options": [
+      "The employee's public key",
+      "The employee's private key",
+      "The client's public key",
+      "The client's private key"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Digital signatures provide non-repudiation and authenticity. The sender (employee) uses their own private key to encrypt the hash of the message, creating the signature. The recipient (client) then uses the sender's public key to verify it."
+  },
+  {
+    "id": "ISC-005",
+    "questionType": "MCQ",
+    "domain": "Information Systems and Data Management",
+    "topic": "Disaster Recovery",
+    "skillLevel": "Application",
+    "question": "A company requires a backup facility that has all necessary hardware and software installed and configured, and can be fully operational within hours of a disruption. Which type of site is needed?",
+    "options": [
+      "Cold site",
+      "Warm site",
+      "Hot site",
+      "Mobile site"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "A Hot site is fully configured with redundant hardware, software, and real-time data replication, allowing recovery within hours or even minutes. A Warm site takes days, and a Cold site has no hardware installed and takes weeks."
+  },
+  {
+    "id": "ISC-006",
+    "questionType": "MCQ",
+    "domain": "Security, Confidentiality and Privacy",
+    "topic": "Network Security",
+    "skillLevel": "Remembering and Understanding",
+    "question": "What is the primary function of a Web Application Firewall (WAF)?",
+    "options": [
+      "To block unauthorized port scanning at the network perimeter",
+      "To inspect incoming HTTP traffic and prevent application-layer attacks like SQL injection",
+      "To route internal web traffic securely to external networks",
+      "To provide encrypted remote access via a VPN"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "A Web Application Firewall (WAF) operates at Layer 7 (the application layer) of the OSI model. It is specifically designed to inspect HTTP/HTTPS traffic to block common web exploits like SQL injection and Cross-Site Scripting (XSS)."
+  },
+  {
+    "id": "ISC-007",
+    "questionType": "MCQ",
+    "domain": "Considerations for SOC Engagements",
+    "topic": "Trust Services Criteria",
+    "skillLevel": "Remembering and Understanding",
+    "question": "Under the AICPA Trust Services Criteria, which principle addresses the requirement that system processing is complete, valid, accurate, timely, and authorized?",
+    "options": [
+      "Availability",
+      "Processing Integrity",
+      "Security",
+      "Confidentiality"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Processing Integrity focuses on ensuring that data processing accomplishes its intended purpose, meaning it is complete, valid, accurate, timely, and authorized. It ensures there are no errors in system processing."
+  },
+  {
+    "id": "ISC-008",
+    "questionType": "MCQ",
+    "domain": "Information Systems and Data Management",
+    "topic": "Database Management",
+    "skillLevel": "Remembering and Understanding",
+    "question": "Which of the following is a primary characteristic of a highly normalized database?",
+    "options": [
+      "High data redundancy",
+      "Reduced data anomalies during updates",
+      "Faster execution of complex read-queries",
+      "A flat, single-table structure"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Database normalization organizes tables to reduce redundancy and dependency. By minimizing duplicate data, it greatly reduces the risk of insertion, update, and deletion anomalies. However, it can sometimes slow down complex read-queries due to the need for multiple table joins."
+  },
+  {
+    "id": "ISC-009",
+    "questionType": "MCQ",
+    "domain": "Security, Confidentiality and Privacy",
+    "topic": "Incident Response",
+    "skillLevel": "Application",
+    "question": "In the standard incident response life cycle, what is the primary goal of the 'Containment' phase?",
+    "options": [
+      "To identify the root cause of the cybersecurity incident",
+      "To prevent the incident from spreading and causing further damage to other systems",
+      "To restore affected systems to normal business operation",
+      "To document lessons learned for future incident prevention"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Containment occurs immediately after a threat is detected and confirmed. The primary goal is to isolate the affected systems (e.g., disconnecting a compromised server from the network) to stop the threat from spreading further before eradication begins."
+  },
+  {
+    "id": "ISC-010",
+    "questionType": "MCQ",
+    "domain": "Considerations for SOC Engagements",
+    "topic": "SOC 2 Reports",
+    "skillLevel": "Analysis",
+    "question": "Which of the following elements is required in a Type 2 SOC report but is NOT included in a Type 1 SOC report?",
+    "options": [
+      "Management's assertion regarding the system description",
+      "The service auditor's opinion on the suitability of the design of controls",
+      "A description of the service organization's system",
+      "The service auditor's opinion on the operating effectiveness of controls over a specified period"
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "A Type 1 report assesses the design of controls at a specific point in time. A Type 2 report goes further by testing and providing an opinion on the operating effectiveness of those controls over a specified period of time (usually 6 to 12 months)."
+  }
+]
